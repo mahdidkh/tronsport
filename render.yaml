@@ -4,7 +4,7 @@ services:
     runtime: docker
     plan: free
     rootDir: tronsport
-    buildCommand: ./mvnw clean package -DskipTests
+    dockerfilePath: Dockerfile
     envVars:
       - key: DATABASE_URL
         value: jdbc:mysql://mysql-tronsport.alwaysdata.net:3306/tronsport_db?useSSL=true&serverTimezone=UTC
