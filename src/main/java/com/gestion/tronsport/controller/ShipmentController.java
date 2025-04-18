@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/shipments")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "https://tronsport-frontend.onrender.com", "https://*.vercel.app", "https://gestion-tronsport.idgt.vercel.app"})
 public class ShipmentController {
     private final ShipmentService shipmentService;
 
