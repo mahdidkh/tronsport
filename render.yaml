@@ -1,7 +1,7 @@
 services:
   - type: web
     name: tronsport-api
-    runtime: java
+    runtime: docker
     plan: free
     rootDir: tronsport
     buildCommand: ./mvnw clean package -DskipTests
