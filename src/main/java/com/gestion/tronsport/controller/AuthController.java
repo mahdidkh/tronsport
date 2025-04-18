@@ -1,13 +1,19 @@
 package com.gestion.tronsport.controller;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.gestion.tronsport.dto.LoginRequest;
 import com.gestion.tronsport.dto.RegisterRequest;
 import com.gestion.tronsport.service.AuthService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 public class AuthController {
     private final AuthService authService;
 
@@ -34,13 +40,20 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
+            System.out.println("Received login request for: " + request.getEmail());
             boolean isAuthenticated = authService.login(request);
             if (isAuthenticated) {
-                return ResponseEntity.ok().body("Login successful");
+                // Create a simple response with a token
+                return ResponseEntity.ok().body(java.util.Map.of(
+                    "token", "dummy-token-" + java.util.UUID.randomUUID().toString(),
+                    "message", "Login successful"
+                ));
             } else {
                 return ResponseEntity.badRequest().body("Invalid credentials");
             }
         } catch (Exception e) {
+            System.out.println("Login error: " + e.getMessage());
+            e.printStackTrace();
             return ResponseEntity.badRequest().body("Invalid credentials");
         }
     }

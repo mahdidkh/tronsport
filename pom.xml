@@ -13,6 +13,7 @@
     <artifactId>tronsport</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tronsport</name>
+    <packaging>jar</packaging>
     <description>Transport management system</description>
     
     <properties>
@@ -20,11 +21,10 @@
     </properties>
     
     <dependencies>
-
-    	<dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-actuator</artifactId>
-    	</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,6 +65,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <excludes>
                         <exclude>
@@ -77,4 +84,3 @@
         </plugins>
     </build>
 </project>
-

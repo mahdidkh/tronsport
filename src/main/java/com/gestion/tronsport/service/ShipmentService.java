@@ -16,11 +16,14 @@ public class ShipmentService {
 
     public Shipment createShipment(ShipmentRequest request) {
         Shipment shipment = new Shipment();
-        
+
         // Set Merchandise Information
         shipment.setMerchandiseName(request.getMerchandiseName());
         shipment.setWeight(request.getWeight());
         shipment.setDescription(request.getDescription());
+        shipment.setPackageCount(request.getPackageCount());
+        shipment.setIsStackable(request.getIsStackable());
+        shipment.setVolume(request.getVolume());
 
         // Set Shipper Information
         shipment.setShipperName(request.getShipperName());
@@ -39,6 +42,11 @@ public class ShipmentService {
         shipment.setShippingCost(request.getShippingCost());
         shipment.setService(request.getService());
         shipment.setModeOfTransport(request.getModeOfTransport());
+        shipment.setCountry(request.getCountry());
+        shipment.setPriceEUR(request.getPriceEUR());
+        shipment.setPriceTND(request.getPriceTND());
+        shipment.setDate(request.getDate());
+        shipment.setIncoterms(request.getIncoterms());
 
         // Set Payment Information
         shipment.setPaymentMethod(request.getPaymentMethod());
