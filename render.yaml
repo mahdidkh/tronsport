@@ -5,7 +5,6 @@ services:
     plan: free
     rootDir: tronsport
     buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/tronsport-0.0.1-SNAPSHOT.jar
     envVars:
       - key: DATABASE_URL
         value: jdbc:mysql://mysql-tronsport.alwaysdata.net:3306/tronsport_db?useSSL=true&serverTimezone=UTC
