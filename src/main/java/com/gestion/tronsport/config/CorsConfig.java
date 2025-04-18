@@ -9,17 +9,11 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins(
-                "http://localhost:5173",
-                "http://localhost:5174",
-                "https://tronsport-frontend.onrender.com",
-                "https://gestion-tronsport-idgt.vercel.app",
-                "https://gestion-tronsport-idqt.vercel.app"
-            )  // Your React app's URLs
+            .allowedOrigins("*")  // Allow all origins for testing
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD")
             .allowedHeaders("*")
             .exposedHeaders("Authorization")
-            .allowCredentials(true)
+            .allowCredentials(false)  // Changed to false to allow wildcard origin
             .maxAge(3600);
     }
 }
