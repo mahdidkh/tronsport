@@ -3,7 +3,7 @@ services:
     name: tronsport-api
     runtime: docker
     plan: free
-    rootDir: tronsport
+    rootDir: pfe_v_f/tronsport
     dockerfilePath: Dockerfile
     envVars:
       - key: DATABASE_URL
