@@ -3,11 +3,11 @@ services:
     name: tronsport-api
     runtime: docker
     plan: free
-    rootDir: pfe_v_f/tronsport
+    rootDir: .
     dockerfilePath: Dockerfile
     envVars:
       - key: DATABASE_URL
-        value: jdbc:mysql://mysql-tronsport.alwaysdata.net:3306/tronsport_db?useSSL=true&serverTimezone=UTC
+        value: jdbc:mysql://mysql-tronsport.alwaysdata.net:3306/tronsport_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=60000&socketTimeout=60000
       - key: DATABASE_USERNAME
         value: tronsport
       - key: DATABASE_PASSWORD
@@ -23,7 +23,7 @@ services:
     name: tronsport-frontend
     runtime: node
     plan: free
-    rootDir: gestion_tronsport
+    rootDir: ../gestion_tronsport
     buildCommand: npm install && npm run build
     startCommand: npm run preview
     envVars:

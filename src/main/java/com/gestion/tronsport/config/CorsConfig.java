@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://localhost:5173", "http://localhost:5174")  // Your React app's URLs
+            .allowedOrigins("http://localhost:5173", "http://localhost:5174", "https://tronsport-frontend.onrender.com", "https://*.vercel.app")  // Your React app's URLs
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD")
             .allowedHeaders("*")
             .exposedHeaders("Authorization")
