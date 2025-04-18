@@ -39,7 +39,8 @@ public class SecurityConfig {
             "http://localhost:5173",
             "http://localhost:5174",
             "https://tronsport-frontend.onrender.com",
-            "https://gestion-tronsport-idgt.vercel.app"
+            "https://gestion-tronsport-idgt.vercel.app",
+            "https://gestion-tronsport-idqt.vercel.app"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"));
         configuration.setAllowedHeaders(List.of("*"));

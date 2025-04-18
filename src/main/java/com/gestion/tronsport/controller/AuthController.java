@@ -17,7 +17,8 @@ import com.gestion.tronsport.service.AuthService;
     "http://localhost:5173",
     "http://localhost:5174",
     "https://tronsport-frontend.onrender.com",
-    "https://gestion-tronsport-idgt.vercel.app"
+    "https://gestion-tronsport-idgt.vercel.app",
+    "https://gestion-tronsport-idqt.vercel.app"
 })
 public class AuthController {
     private final AuthService authService;
