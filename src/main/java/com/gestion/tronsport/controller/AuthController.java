@@ -13,7 +13,12 @@ import com.gestion.tronsport.service.AuthService;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "https://tronsport-frontend.onrender.com", "https://*.vercel.app", "https://gestion-tronsport.idgt.vercel.app"})
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://tronsport-frontend.onrender.com",
+    "https://gestion-tronsport-idgt.vercel.app"
+})
 public class AuthController {
     private final AuthService authService;
 
