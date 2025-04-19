@@ -49,4 +49,14 @@ public class RegisterRequest {
     public void setFullName(String fullName) {
         this.name = fullName;
     }
+
+    @Override
+    public String toString() {
+        return "RegisterRequest{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + (password != null ? "[PROTECTED]" : "null") + '\'' +
+                ", confirmPassword='" + (confirmPassword != null ? "[PROTECTED]" : "null") + '\'' +
+                '}';
+    }
 }

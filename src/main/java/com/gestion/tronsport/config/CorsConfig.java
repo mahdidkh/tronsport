@@ -9,11 +9,17 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("*")  // Allow all origins for testing
+            .allowedOrigins(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "https://tronsport-frontend.onrender.com",
+                "https://gestion-tronsport-idgt.vercel.app",
+                "https://gestion-tronsport-idqt.vercel.app"
+            )
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD")
             .allowedHeaders("*")
             .exposedHeaders("Authorization")
-            .allowCredentials(false)  // Changed to false to allow wildcard origin
+            .allowCredentials(true)
             .maxAge(3600);
     }
 }

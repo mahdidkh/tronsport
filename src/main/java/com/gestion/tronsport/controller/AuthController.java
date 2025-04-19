@@ -31,7 +31,21 @@ public class AuthController {
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         try {
             System.out.println("Received registration request: " + request.getName() + ", " + request.getEmail());
+            System.out.println("Request details: " + request);
+
+            // Validate request
+            if (request.getName() == null || request.getName().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("Name is required");
+            }
+            if (request.getEmail() == null || request.getEmail().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("Email is required");
+            }
+            if (request.getPassword() == null || request.getPassword().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("Password is required");
+            }
+
             authService.register(request);
+            System.out.println("User registered successfully: " + request.getEmail());
             return ResponseEntity.ok().body("User registered successfully");
         } catch (RuntimeException e) {
             System.out.println("Registration error: " + e.getMessage());

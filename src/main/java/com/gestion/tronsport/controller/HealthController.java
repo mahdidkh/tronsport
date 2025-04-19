@@ -11,7 +11,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/health")
-@CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://tronsport-frontend.onrender.com",
+    "https://gestion-tronsport-idgt.vercel.app",
+    "https://gestion-tronsport-idqt.vercel.app"
+})
 public class HealthController {
 
     @GetMapping
@@ -20,7 +26,7 @@ public class HealthController {
         response.put("status", "UP");
         response.put("message", "Service is running");
         response.put("timestamp", System.currentTimeMillis());
-        
+
         return ResponseEntity.ok(response);
     }
 }
