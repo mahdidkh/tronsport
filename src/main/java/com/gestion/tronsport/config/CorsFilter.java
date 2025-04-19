@@ -29,7 +29,8 @@ public class CorsFilter implements Filter {
             "https://tronsport-frontend.onrender.com",
             "https://gestion-tronsport-idgt.vercel.app",
             "https://gestion-tronsport-idqt.vercel.app",
-            "https://gestion-tronsport-idkj.vercel.app"
+            "https://gestion-tronsport-idkj.vercel.app",
+            "https://gestion-tronsport-1bngomhl3-mohamed-mahdis-projects.vercel.app"
         };
 
         // Check if the origin is allowed
@@ -46,7 +47,7 @@ public class CorsFilter implements Filter {
 
         // If origin is not in the allowed list, use a default (you can change this behavior)
         if (!allowed) {
-            response.setHeader("Access-Control-Allow-Origin", "https://gestion-tronsport-idkj.vercel.app");
+            response.setHeader("Access-Control-Allow-Origin", "https://gestion-tronsport-1bngomhl3-mohamed-mahdis-projects.vercel.app");
         }
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH, HEAD");
         response.setHeader("Access-Control-Max-Age", "3600");
